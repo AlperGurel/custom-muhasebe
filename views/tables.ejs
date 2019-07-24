@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tablolar</title>
+    <link rel="stylesheet" href="css/tables.css">
+</head>
+<body>
+    <div id="app">
+        <select @change="loadData()" v-model="selected_table">
+            <option value="GD_MUSTERI_BAKIYE">Müşteri Bakiye</option>
+            <option value="GD_TEDARIKCI_BAKIYE">Tedarikçi Bakiye</option>
+            <option value="GD_VW_ALINAN_CEKLER">Alınan Çekler</option>
+            <option value="GD_VW_ALISLAR">Alışlar</option>
+            <option value="GD_VW_Banka">Banka</option>
+            <option value="GD_VW_GIDERLER">Giderler</option>
+            <option value="GD_VW_HIZMET_SOZLESMELERI">Hizmet Sözleşmeleri</option>
+            <option value="GD_VW_Kasa">Kasa</option>
+            <option value="GD_VW_KREDILER">Krediler</option>
+            <option value="GD_VW_SATISLAR">Satışlar</option>
+            <option value="GD_VW_VERGI">Vergi</option>
+            <option value="GD_VW_VERILEN_CEKLER">Verilen Çekler</option>
+            <option value="GD_WV_MIZAN">Mizan</option>
+            <option value="GD_WV_MIZAN_00">Mizan 0</option>
+            <option value="GD_WV_MIZAN_01">Mizan 1</option>
+            <option value="GD_WV_MIZAN_02">Mizan 2</option>
+        </select>
+        <!-- <div id="table_div"></div> -->
+        <div id="table_container"></div>
+    </div>
+
+    
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/tables.js"></script>
+
+</html>
