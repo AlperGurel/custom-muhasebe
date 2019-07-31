@@ -1,3 +1,104 @@
-body {
-    padding: 50px;
+.table-toolbar{
+  background-color: #222222;
+  width: 100%;
+  height: 65px;
+  overflow:hidden;
+  border-top: solid 2px #232323;
+  
+}
+
+.table-picker{
+  cursor: default;
+}
+
+.table-picker{
+  padding: 18px 16px;
+  float:left;
+
+}
+.searchbar{
+  padding: 18px 16px;
+  width: 100px;
+  float:right;
+}
+.dateStart{
+  padding: 18px 16px;
+  width: 100px;
+  float:right;
+}
+.dateEnd{
+  padding: 18px 16px;
+  width: 100px;
+  float:right;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  background-color: #3D3D3D;
+  z-index: 1000;
+}
+
+.dropdown-content div{
+  max-height: 10px;
+}
+
+.table-picker:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown-content div{
+  padding: 13px 14px;
+}
+
+.dropdown-content div:hover{
+  background-color: #3B82BE;
+  cursor:default;
+}
+
+.table-container{
+  margin-top: 30px;
+  width: 100%;
+  background-color: rgb(66, 66, 66);
+}
+
+.test-black{
+  background:#222222;
+  font-family: 'Ubuntu', sans-serif;
+  border-style:none;
+  color: #acacac;
+  font-weight: 600;
+}
+.test-black:hover{
+  background:#111111;
+}
+
+.row-head{
+  
+  height: 40px;
+}
+
+.table-cell{
+  overflow: auto; 
+}
+
+.google-visualization-table .gradient {
+  background-image: none;
+}
+
+.table-picker i{
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.table-picker{
+  margin-top: 5px;
+  background: #454545;
+  margin-left:5px;
+}
+
+.google-visualization-table-table td{
+  border-style: none;
 }

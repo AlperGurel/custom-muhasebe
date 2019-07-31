@@ -1,30 +1,50 @@
 const express = require("express");
 const router = express.Router();
 const sql = require("mssql");
-
-const config = {
-    user: 'alpergurel',
-    password: 'alperalper',
-    server: '192.168.10.250\\MIKROSQL',
-    database: 'MikroDB_V15_00',
-    port: 49234,
-    options: {
-        encrypt: true 
-    }
-}
+const config = require("../config.json").databaseConfig;
+const fs = require("fs");
+const path = require("path");
 
 router.get("/", (req, res, next) => {
     res.status(200).render("tables");
 });
 
 
+
+router.get("/test/:table_name", (req, res, next) => {
+    const filePath = path.join(__dirname, "../public/data/tables.json");
+    const typeFilePath = path.join(__dirname, "../public/data/types.json");
+    fs.readFile(filePath, (err, data) => {
+        if(err){
+            console.log(err)
+        }
+        else{
+            data = JSON.parse(data);
+            const table_name = req.params.table_name;
+            let tableData = data[table_name];
+            fs.readFile(typeFilePath, (err, typeData) => {
+                if(err) console.log(err);
+                typeData = JSON.parse(typeData);
+                let obj = {
+                    data: tableData,
+                    type: typeData[table_name]
+                }
+                res.status(200).json(obj);
+            })
+        }
+    })
+})
+
 router.get("/gettable/:table_name", (req, res, next) => {
     const table_name = req.params.table_name;
     const query = "select * from " + table_name;
+    if(sql){
+        sql.close()
+    }
     sql.connect(config, err => {
         console.log(err);
         new sql.Request().query(query, (err, result) => {
-            console.log(err);
+            if(err)console.log(err);
             const type_query = `select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] 
             WHERE [TABLE_NAME] = '${table_name}'`;
             
@@ -40,24 +60,6 @@ router.get("/gettable/:table_name", (req, res, next) => {
     })
     sql.on("error", err => {
         console.log(err);
-    })
-})
-
-
-
-router.get("/test/:tablename", (req, res, next) => {
-    console.log("testing")
-    const tablename = req.params.tablename;
-    const query = `SELECT [TABLE_NAME]
-    ,[COLUMN_NAME]
-    ,[DATA_TYPE]
-FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] where [TABLE_NAME] = '${tablename}'`;
-    sql.connect(config, err => {
-        new sql.Request().query(query, (err, result) => {
-            console.log(err);
-            res.status(200).json(result);
-            sql.close();
-        })
     })
 })
 

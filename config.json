@@ -1,0 +1,12 @@
+{
+    "databaseConfig": {
+        "user": "alpergurel",
+        "password": "alperalper",
+        "server": "192.168.10.250\\MIKROSQL",
+        "database": "MikroDB_V15_00",
+        "port": 49234,
+        "options": {
+            "encrypt": true 
+        }
+    }
+}

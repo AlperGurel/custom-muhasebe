@@ -1,0 +1,56 @@
+{
+    "queries": {
+        "gerceklesenSatislar": "SELECT [Fatura Tarihi] ,[Fatura Tutarı] ,[Gerçekleşen Ödeme] ,[Kalan Ödeme] FROM [MikroDB_V15_00].[dbo].[GD_VW_SATISLAR]",
+        "alislar": "SELECT [Fatura Tarihi],[Posizyon],[Fatura Tutarı],[Gerçekleşen Ödeme],[Kalan Ödeme] ,[Tahslat Durumu] FROM [MikroDB_V15_00].[dbo].[GD_VW_ALISLAR]",
+        "planlananSatis": "SELECT [Fatura Tarihi],[Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_HIZMET_SOZLESMELERI]",
+        "tahsildekiCek": "SELECT [Tahsilat Vadesi],[Çek Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_ALINAN_CEKLER] where [GD_VW_ALINAN_CEKLER].[Posizyon] = 'Ödendi'",
+        "portfoydekiCekler": "SELECT [Tahsilat Vadesi],[Çek Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_ALINAN_CEKLER] where [GD_VW_ALINAN_CEKLER].[Posizyon] = 'Portföyde'",
+        "guncelBakiye": "SELECT [İşlem],[Giriş],[Çıkış] FROM [MikroDB_V15_00].[dbo].[GD_VW_Kasa]",
+        "planlananGiderler": "SELECT [Ödeme Vadesi],[bna_tutar] FROM [MikroDB_V15_00].[dbo].[GD_VW_VERGI]",
+        "gerceklesenGiderler": "SELECT [Tarih] ,[Masraf Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_GIDERLER]",
+        "ziraatCek":"SELECT  [Ödeme Tarihi] ,[Banka Adı] ,[Çek Vadesi],[Çek Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_VERILEN_CEKLER] where [Banka Adı] = 'Ziraat'",
+        "albarakCek": "SELECT  [Ödeme Tarihi],[Banka Adı],[Çek Vadesi] ,[Çek Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_VERILEN_CEKLER] where [Banka Adı] = 'ALBARAKA TÜRK - 0001 NOLU TL HESAP'",
+        "akbankKredi":  "SELECT [Banka Adı],[Ödeme Vadesi],[Taksit Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_KREDILER] where [Banka Adı] = 'AKBANK - 2459 NOLU TL HESAP'",
+        "albarakaKredi": "SELECT [Banka Adı],[Ödeme Vadesi] ,[Taksit Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_KREDILER] where [Banka Adı] = 'ALBARAKA TÜRK - 0001 NOLU TL HESAP'",
+        "ziraatKredi": "SELECT [Banka Adı],[Ödeme Vadesi] ,[Taksit Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_KREDILER] where [Banka Adı] = 'ZİRAAT BANKASI - 5001 NOLU TL HESAP'",
+        "finansKredi": "SELECT [Banka Adı],[Ödeme Vadesi],[Taksit Tutarı] FROM [MikroDB_V15_00].[dbo].[GD_VW_KREDILER] where [Banka Adı] = 'QNB FİNANS BANK -0787 NOLU TL HESAP'",
+        "toplamBankaMevduat": "SELECT [Ocak],[Şubat],[Mart] ,[Nisan],[Mayıs],[Haziran],[Temmuz],[Ağuston],[Eylül],[Ekim],[Kasım],[Aralık]FROM [MikroDB_V15_00].[dbo].[GD_VW_Banka]"
+    },
+    "tableQueries":{
+        "GD_MUSTERI_BAKIYE": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_MUSTERI_BAKIYE]",
+        "GD_TEDARIKCI_BAKIYE": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_TEDARIKCI_BAKIYE]",
+        "GD_VW_ALINAN_CEKLER": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_ALINAN_CEKLER]",
+        "GD_VW_ALISLAR": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_ALISLAR]",
+        "GD_VW_Banka": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_Banka]",
+        "GD_VW_GIDERLER": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_GIDERLER]",
+        "GD_VW_HIZMET_SOZLESMELERI": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_HIZMET_SOZLESMELERI]",
+        "GD_VW_KASA": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_Kasa]",
+        "GD_VW_KREDILER": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_KREDILER]",
+        "GD_VW_SATISLAR": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_SATISLAR]",
+        "GD_VW_VERGI": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_VERGI]",
+        "GD_VW_VERILEN_CEKLER": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_VW_VERILEN_CEKLER]",
+        "GD_WV_MIZAN": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_WV_MIZAN]",
+        "GD_WV_MIZAN_00": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_WV_MIZAN_00]",
+        "GD_WV_MIZAN_01": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_WV_MIZAN_01]",
+        "GD_WV_MIZAN_02": "SELECT * FROM [MikroDB_V15_00].[dbo].[GD_WV_MIZAN_02]"
+    },
+    "typeQueries":{
+        "GD_MUSTERI_BAKIYE": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_MUSTERI_BAKIYE'",
+        "GD_TEDARIKCI_BAKIYE": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_TEDARIKCI_BAKIYE'",
+        "GD_VW_ALINAN_CEKLER": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_ALINAN_CEKLER'",
+        "GD_VW_ALISLAR": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_ALISLAR'",
+        "GD_VW_Banka": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_Banka'",
+        "GD_VW_GIDERLER": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_GIDERLER'",
+        "GD_VW_HIZMET_SOZLESMELERI": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_HIZMET_SOZLESMELERI'",
+        "GD_VW_KASA": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_Kasa'",
+        "GD_VW_KREDILER": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_KREDILER'",
+        "GD_VW_SATISLAR": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_SATISLAR'",
+        "GD_VW_VERGI": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_VW_VERGI'",
+        "GD_VW_VERILEN_CEKLER": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS]WHERE [TABLE_NAME] = 'GD_VW_VERILEN_CEKLER'",
+        "GD_WV_MIZAN": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_WV_MIZAN'",
+        "GD_WV_MIZAN_00": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_WV_MIZAN_00'",
+        "GD_WV_MIZAN_01": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_WV_MIZAN_01'",
+        "GD_WV_MIZAN_02": "select [DATA_TYPE] FROM [MikroDB_V15_00].[INFORMATION_SCHEMA].[COLUMNS] WHERE [TABLE_NAME] = 'GD_WV_MIZAN_02'"
+    
+    }
+}

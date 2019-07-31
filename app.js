@@ -3,11 +3,6 @@ const app = express();
 const cors = require("cors");
 const path = require("path");
 
-//routes
-const indexRouter = require("./routes/index");
-const tablesRouter = require("./routes/tables")
-const veriRouter = require("./routes/veri")
-
 app.set("view engine", "ejs");
 
 app.use(cors());
@@ -27,10 +22,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
 
+//routes
+const indexRouter = require("./routes/index");
+const tablesRouter = require("./routes/tables")
+const veriRouter = require("./routes/veri")
+const graphRouter = require("./routes/graph")
+const veri2Router = require("./routes/veri_v2")
 
 app.use("/", indexRouter);
 app.use("/tables", tablesRouter);
 app.use("/veri", veriRouter);
+app.use("/graph", graphRouter);
+app.use("/test", veri2Router);
+
 
 app.use((req, res, next)=>{
     const error = new Error("Not Found");
