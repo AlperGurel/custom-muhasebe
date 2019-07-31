@@ -1,4 +1,5 @@
 
+
 typeMap = {
     nvarchar: "string",
     float: "number",
@@ -10,10 +11,13 @@ typeMap = {
     tinyint: "number",
 }
 
+let table_name;
+
 $(".table-name").click(function(e){
     $("#visible-table-name").html(e.currentTarget.innerText);
     // $(".dropdown-content").css("display", "none");
     let query = e.currentTarget.id;
+    table_name = query;
     $.ajax({
         type: "get",
         url: "http://192.168.10.155:3000/tables/test/" + query,
@@ -34,22 +38,47 @@ google.charts.load('current', {'packages':['table']});
         let columnFix = {}
         result.type.forEach((element, index) => {
             let type = typeMap[element["DATA_TYPE"]];
-            let columnName = columnKeys[index];
+            let columnName = columnKeys[index].toLocaleUpperCase();
+            //if columnkeys[index] tahsilat tarihi
+            //   make type a date
+            let dateColumns = ["Tahsilat Tarihi",
+                                "Tahsilat Vadesi",
+                                "Fatura Tarihi", 
+                                "Ödeme Tarihi",
+                                "Çek Vadesi",
+                                "Kabul Tarihi",
+                                "Ödeme Vadesi",
+                                "Tarih",
+                                "Tahakkuk Tarihi"
+                            ]
+            if( dateColumns.includes(columnKeys[index])){
+                type = "date";
+            }
+            // if(columnKeys[index] == "Ödeme Vadesi" && table_name=="GD_VW_GIDERLER"){
+            //     type = "number"
+            // }
             columnTypes[index] = type;
             data.addColumn(type, columnName)
             if(columnName === "TEL NO"){
                 columnFix["telno index"] = index
             }
-
+            if(columnName === "Banka Adı"){
+                columnFix["Banka Adı"] = index
+            }
+            if(columnName === "TEMSİLCİ ADI"){
+                columnFix["TEMSİLCİ ADI"] = index
+            }
         })
+
         let dataVis = []
         result.data.forEach((element) => {
             let row = []
             //test
             columnKeys.forEach((column,index) => {
                 if(columnTypes[index] === "date"){
-                    
-                    element[column] = new Date(element[column]);
+                    //process given element (probably check if valid inside the function)                
+                    //element[column] = new Date(element[column]);
+                    element[column] = fixDate(element[column]);
                 }
                 if(columnTypes[index] === "number"){
                     if(element[column]){
@@ -62,19 +91,32 @@ google.charts.load('current', {'packages':['table']});
             })
             dataVis.push(row);
         })
+        console.log(columnFix)
         data.addRows(dataVis);
         if(columnFix["telno index"]){
-            data.setProperty(0, columnFix["telno index"], "style", "width:110px");
+            data.setProperty(0, columnFix["telno index"], "style", "width:130px");
+        }
+        if(columnFix["Banka Adı"]){
+            // data.setProperty(0, columnFix["Banka Adı"], "style", "width:650px");
+            // data.setProperty(0, 1, "style", "width:1650px");
+            //bir nedenden ötürü index 1'deki çalışmıyor
+        }
+        if(columnFix["TEMSİLCİ ADI"]){
+            console.log("Fixing temsilci adı column")
+            data.setProperty(0, columnFix["TEMSİLCİ ADI"], "style", "width:200px")
         }
         var table = new google.visualization.Table(document.getElementById('data-table'));
         var cssClassNames = {
             "tableRow":"test-black",
-            "oddTableRow": "test-black",
+            "oddTableRow": "test-black-odd",
             "headerRow": "test-black row-head",
             "tableCell": "table-cell"
         }
-
-        table.draw(data, {width: '100%', height: '70%', cssClassNames:cssClassNames, allowHtml: true});
+        var monthYearFormatter = new google.visualization.DateFormat({
+            pattern: "dd-MM-yyy"
+        });
+        monthYearFormatter.format(data, 0);
+        table.draw(data, { height: '78%', cssClassNames:cssClassNames, allowHtml: true});
 
        for(let i = 0; i < $("tr")[0]["cells"].length; i++){
             $("tr")[0]["cells"][i].style.background = "#393939";
@@ -85,3 +127,17 @@ google.charts.load('current', {'packages':['table']});
     //        $("td")[i].style["border-style"] = "none";
     //    }
       }
+
+function fixDate(badDate){
+    try{
+        let goodDate = new Date(badDate);
+        if(goodDate = "Invalid Date"){
+            let dateParts = badDate.split(".");
+           goodDate = new Date(dateParts[2], dateParts[0] -1, dateParts[1]);
+        }
+        return goodDate;
+    }
+    catch(error){
+     
+    }
+}

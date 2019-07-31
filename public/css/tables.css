@@ -69,6 +69,7 @@
   border-style:none;
   color: #acacac;
   font-weight: 600;
+  height: 10px;
 }
 .test-black:hover{
   background:#111111;
@@ -79,7 +80,8 @@
   border-style:none;
   color: #d8d8d8;
   font-weight: 600;
-  background: #3a3a3a
+  background: #3a3a3a;
+  height: 10px;
 }
 
 .test-black-odd:hover{

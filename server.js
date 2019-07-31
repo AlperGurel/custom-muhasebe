@@ -50,6 +50,7 @@ function updateData(){
         if(err){
             console.log(err);
         }
+    
         new sql.Request().query(combinedQuery, (err, result) => {
             if(err){
                 console.log(err);
@@ -92,6 +93,9 @@ function updateTables(){
         }
         new sql.Request().query(combinedTableQuery, (err, result) => {
             if(err) console.log(err);
+            else{
+                
+            }
             let data = {};
             result.recordsets.forEach((element, index) => {
                 data[tableQueryKeyList[index]] = element;
