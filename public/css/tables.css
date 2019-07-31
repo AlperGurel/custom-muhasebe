@@ -74,6 +74,18 @@
   background:#111111;
 }
 
+.test-black-odd{
+  font-family: 'Ubuntu', sans-serif;
+  border-style:none;
+  color: #d8d8d8;
+  font-weight: 600;
+  background: #3a3a3a
+}
+
+.test-black-odd:hover{
+  background:#111111;
+}
+
 .row-head{
   
   height: 40px;
