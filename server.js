@@ -50,39 +50,54 @@ function updateData(){
         if(err){
             console.log(err);
         }
-    
-        new sql.Request().query(combinedQuery, (err, result) => {
-            if(err){
-                console.log(err);
-            }
-            //recordsetin içindeki her veri için queryden isim çekip obje içinde 
-            //girdi oluştur.
-            let data = {};
-            result.recordsets.forEach((element, index) => {
-                data[queryKeyList[index]] = element;
+        else{
+            new sql.Request().query(combinedQuery, (err, result) => {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    //recordsetin içindeki her veri için queryden isim çekip obje içinde 
+                    //girdi oluştur.
+                    let data = {};
+                    result.recordsets.forEach((element, index) => {
+                        data[queryKeyList[index]] = element;
+                    })
+                    fs.writeFileSync("./public/data/veri.json", JSON.stringify(data));
+                    console.log("veri.json is updated")
+                    sql.close();
+                    updateTables();
+                }
             })
-            fs.writeFileSync("./public/data/veri.json", JSON.stringify(data));
-            console.log("veri.json is updated")
-            sql.close();
-            updateTables();
-        })
+
+        }
+    
     })
 }
 
 function updateTypes(){
     sql.connect(config, err => {
-        if(err) console.log(err);
-        new sql.Request().query(combinedTypeQuery, (err, result) => {
-            if(err) console.log(err);
-            let data = {};
-            result.recordsets.forEach((element, index) => {
-                data[typeQueryKeyList[index]] = element;
+        if(err){
+            console.log(err);
+        } 
+        else{
+            new sql.Request().query(combinedTypeQuery, (err, result) => {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    let data = {};
+                    result.recordsets.forEach((element, index) => {
+                        data[typeQueryKeyList[index]] = element;
+                    })
+                    fs.writeFileSync("./public/data/types.json", JSON.stringify(data));
+                    console.log("types.json updated");
+                    sql.close();
+                    updateData();
+
+                }
             })
-            fs.writeFileSync("./public/data/types.json", JSON.stringify(data));
-            console.log("types.json updated");
-            sql.close();
-            updateData();
-        })
+
+        }
     })
 }
 
@@ -91,25 +106,34 @@ function updateTables(){
         if(err){
             console.log(err);
         }
-        new sql.Request().query(combinedTableQuery, (err, result) => {
-            if(err) console.log(err);
-            else{
-                
-            }
-            let data = {};
-            result.recordsets.forEach((element, index) => {
-                data[tableQueryKeyList[index]] = element;
+        else{
+            new sql.Request().query(combinedTableQuery, (err, result) => {
+                if(err) console.log(err);
+                else{
+                    let data = {};
+                    result.recordsets.forEach((element, index) => {
+                        data[tableQueryKeyList[index]] = element;
+                    })
+                    fs.writeFileSync("./public/data/tables.json", JSON.stringify(data));
+                    console.log("table.json updated")
+                    sql.close();
+                    updateTypes();
+                    
+                }
             })
-            fs.writeFileSync("./public/data/tables.json", JSON.stringify(data));
-            console.log("table.json updated")
-            sql.close();
-            updateTypes();
-        })
+
+        }
     })
 }
+
+sql.on("error", err => {
+    console.log(err)
+    updateData();
+})
 
 
 function setIntervalandExecute(fn, t){
     fn();
     return(setInterval(fn, t))
 };
+

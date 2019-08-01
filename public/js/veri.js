@@ -7,18 +7,18 @@ $(document).ready(function(){
         success: (result) => {
             console.log(result);
             // drawAxisTickColors(result);
-            google.charts.setOnLoadCallback(drawAxisTickColors);
             resultData = result;
+            google.charts.setOnLoadCallback(drawAxisTickColors);
+            google.charts.setOnLoadCallback(drawTable);
         }
     })
 })
 
 
-google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.load('current', {packages: ['corechart', 'bar', "table"]});
 
 
 function drawAxisTickColors() {
-        console.log(resultData)
       var data = new google.visualization.DataTable();
       data.addColumn('string', '2019');
       data.addColumn('number', 'Nakit Girişleri');
@@ -79,4 +79,35 @@ function drawAxisTickColors() {
 
     var chart = new google.visualization.ColumnChart(document.getElementById('column-graph'));
     chart.draw(data, options);
+}
+
+function drawTable(){
+    var data = new google.visualization.DataTable();
+    let months = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+    data.addColumn("string", "");
+    months.forEach((month, index) => {
+        data.addColumn("number", month);
+    })
+    let rows = []
+    let donemBasiNakit = ["Dönem Başı Nakit"];
+    resultData["Dönem Başı Nakit"].forEach((element, index) => {
+        donemBasiNakit.push(element);
+    })
+    let donemSonuNakit = ["Dönem Sonu Nakit"];
+    resultData["Dönem Sonu Nakit"].forEach((element, index) => {
+        donemSonuNakit.push(element);
+    })
+    let donemIciFark = ["Dönem İçi Fark"];
+    resultData["Dönem İçi Fark"].forEach((element, index) => {
+        donemIciFark.push(element);
+    })
+    rows.push(donemBasiNakit);
+    rows.push(donemSonuNakit);
+    rows.push(donemIciFark);
+    data.addRows(rows);
+
+    var table = new google.visualization.Table(document.getElementById('table_div'));
+
+    table.draw(data, {width: '100%'});
+
 }

@@ -6,8 +6,11 @@
     <title>Tablolar</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/tables.css">
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/6a676b52b3.js"></script>
-
+    <link rel="stylesheet" href="/air-datepicker/dist/css/datepicker.min.css">
+    <script type="text/javascript" src="/air-datepicker/dist/js/datepicker.min.js"></script>
+    <script type="text/javascript" src="/air-datepicker/dist/js/i18n/datepicker.tr.js"></script>
 </head>
 <body>
     <%include navbar.ejs%>
@@ -31,17 +34,25 @@
                 <div class="table-name" id="GD_WV_MIZAN_00">Mizan 0</div>
                 <div class="table-name" id="GD_WV_MIZAN_01">Mizan 1</div>
                 <div class="table-name" id="GD_WV_MIZAN_02">Mizan 2</div>
-
             </div>
         </div>
         <div class="searchbar">
-            <span>Search...</span>
+            Search
         </div>
-        <div class="dateEnd">
-            <span>Son Tarih</span>
+        <div class="dateColumnSelection">
+            <select name="" id="dateColumnSelection">
+                <option value="" selected disabled>Sütun Seçimi</option>
+            </select>
         </div>
         <div class="dateStart">
-            <span>İlk Tarih</span>
+            <input id="dateStartPicker" type="text" class="datepicker-here" data-language='tr' placeholder="İlk Tarih">
+        </div>
+        <div class="dateEnd">
+            <input id="dateEndPicker" type="text" class="datepicker-here" data-language='tr' placeholder="Son Tarih">
+        </div>
+        <i class="far fa-calendar-times clear-date"></i>
+        <div class="filter">
+            <button onclick="filter()" id="filterButton">Filter</button>
         </div>
     </div>
     <div class="table-container" >
@@ -53,7 +64,7 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+
 <script type="text/javascript" src="js/tables.js"></script>
 
 </html>

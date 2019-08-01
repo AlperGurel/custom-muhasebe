@@ -32,13 +32,43 @@ router.get("/getData", (req ,res, next) => {
             createNakitCikisleri();
             ///////////////////////////
             createBankaMevduat();
-            
+            ///////////////////////////
+            createSuperUclu();
             res.status(200).json(createdData);
         }
     })
 })
 
 module.exports = router;
+function createSuperUclu(){
+    let donemBasiNakit= [];
+    let donemSonuNakit = [];
+    let donemIciFark = []
+    //for each month
+    //ocak
+    donemBasiNakit.push(0);
+    let tmp = donemBasiNakit[0] + createdData["Nakit Girişleri"][0] - createdData["Nakit Çıkışları"][0] + createdData["Toplam Banka Mevduat"][0];
+    donemSonuNakit.push(tmp);
+    tmp = donemSonuNakit[0] - donemBasiNakit[0]
+    donemIciFark.push(tmp);
+    for(let i = 1; i< 12; i++){
+        donemBasiNakit.push(donemSonuNakit[i-1]);
+        tmp = donemBasiNakit[i] + createdData["Nakit Girişleri"][i] - createdData["Nakit Çıkışları"][i] + createdData["Toplam Banka Mevduat"][0];
+        donemSonuNakit.push(tmp);
+        tmp = donemSonuNakit[i] - donemBasiNakit[i];
+        donemIciFark.push(tmp);
+    }
+    createdData["Dönem Başı Nakit"] = donemBasiNakit;
+    createdData["Dönem Sonu Nakit"] = donemSonuNakit;
+    createdData["Dönem İçi Fark"] = donemIciFark;
+
+        //calculate donemBasiNakit and add List
+        //calculate donemSonuNakit and add list
+        //calculate donemicifark and add list
+        
+
+}
+
 function createNakitCikisleriSecond(){
     createCariFaaliyetlerAlis();
     createSabitGiderler();

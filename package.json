@@ -8,11 +8,14 @@
     "start": "nodemon server.js"
   },
   "nodemonConfig": {
-    "ignore": ["public/data/*.json"]
+    "ignore": [
+      "public/data/*.json"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "cors": "^2.8.5",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
