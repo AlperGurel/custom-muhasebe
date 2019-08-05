@@ -4,8 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Veri</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/veri.css">
     <link rel="stylesheet" href="css/main.css">
+    
 </head>
 <body>
     <% include navbar.ejs %>
@@ -15,12 +17,774 @@
     <div class="table-container">
         <div id="table_div"></div>
     </div>
+    <div class="main-table-container">
+        <div class="months row">
+            <div class="col-left">Göster/Gizle</div>
+            <div class="col-sm">Ocak</div>
+            <div class="col-sm">Şubat</div>
+            <div class="col-sm">Mart</div>
+            <div class="col-sm">Nisan</div>
+            <div class="col-sm">Mayıs</div>
+            <div class="col-sm">Haziran</div>
+            <div class="col-sm">Temmuz</div>
+            <div class="col-sm">Ağustos</div>
+            <div class="col-sm">Eylül</div>
+            <div class="col-sm">Ekim</div>
+            <div class="col-sm">Kasım</div>
+            <div class="col-sm">Aralık</div>
+        </div>
+        <div class="nakit-girisleri">
+            <div class="header row">
+                <div class="col-left">
+                    NAKİT GİRİŞLERİ
+                </div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+            </div>
+            <div class="content">
+                <div class="cari-faaliyetler">
+                    <div class="header row">
+                        <div class="col-left">
+                            Cari Faaliyetler
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                            <div class="gerceklesen-satislar">
+                                    <div class="header row">
+                                        <div class="col-left">
+                                            Gerçekleşen Satışlar
+                                        </div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                        <div class="col-sm">test</div>
+                                    </div>
+                                    <div class="content">
+                                            <div class="gerceklesen-odeme row">
+                                                    <div class="col-left">
+                                                        Gerçekleşen Ödeme
+                                                    </div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                </div>
+                                                <div class="kalan-odeme row">
+                                                    <div class="col-left">
+                                                            Kalan Ödeme
+                                                    </div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                    <div class="col-sm">test</div>
+                                                </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="planlanan-periyodik-satislar row">
+                                    <div class="col-left">
+                                            Planlanan Periyodik Satışlar
+                                    </div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                </div>
+                                <div class="sozlesmeli-planlanan-satislar row">
+                                    <div class="col-left">
+                                            Sözleşmeli Planlanan Satışlar
+                                    </div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                </div>
+            
+                    </div>
+                    
+                </div>
+                <div class="alinan-cekler">
+                    <div class="header row">
+                            <div class="col-left">
+                                    Alınan Çekler
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                            <div class="tahsildeki-cekler row">
+                                    <div class="col-left">
+                                            Tahsildeki Çekler
+                                    </div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                            </div>
+                            <div class="portfoydeki-cekler row">
+                                    <div class="col-left">
+                                           Portfoydeki Çekler
+                                    </div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                            </div>
+                    </div>
+                   
+                </div>
+                <div class="kasa row">
+                    <div class="col-left">
+                            Kasa
+                    </div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                    <div class="col-sm">test</div>
+                </div>
+                <div class="banka-pos-hesaplari">
+                    <div class="header row">
+                        <div class="col-left">
+                               Banka Pos Hesapları
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="pos-tahsilatlari row">
+                            <div class="col-left">
+                                    Pos Tahsilatları
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="nakit-cikisleri">
+            <div class="header row">
+                <div class="col-left">
+                        NAKİT ÇIKIŞLARI
+                </div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+            </div>
+            <div class="content">
+                <div class="cari-faaliyetler">
+                    <div class="header row">
+                        <div class="col-left">
+                                Cari Faaliyetler
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="gerceklesen-alislar">
+                            <div class="header row">
+                                <div class="col-left">
+                                        Gerçekleşen Alışlar
+                                </div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                                <div class="col-sm">test</div>
+                            </div>
+                            <div class="content">
+                                <div class="gerceklesen-odeme row">
+                                    <div class="col-left">
+                                            Gerçekleşen Ödeme
+                                    </div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                </div>
+                                <div class="kalan-odeme row">
+                                    <div class="col-left">
+                                            Kalan Ödeme
+                                    </div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                    <div class="col-sm">test</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="planlanan-alislar row">
+                            <div class="col-left">
+                                    Planlanan Alışlar
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="sozlesmeli-planlanan-alislar row">
+                            <div class="col-left">
+                                    Sözleşmeli Planlanan Alışlar
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="sabit-giderler">
+                    <div class="header row">
+                        <div class="col-left">
+                                Sabit Giderler
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="planlanan-giderler row">
+                            <div class="col-left">
+                                    Planlanan Giderler
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="gerceklesen-giderler row">
+                            <div class="col-left">
+                                    Gerçekleşen Giderler
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="verilen-cekler">
+                    <div class="header row">
+                        <div class="col-left">
+                                Verilen Çekler
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="ziraat-bankasi row">
+                            <div class="col-left">
+                                    Ziraat Bankası
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="albaraka row">
+                            <div class="col-left">
+                                    Albaraka Türk
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="krediler">
+                    <div class="header row">
+                        <div class="col-left">
+                            Krediler
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="akbank row">
+                            <div class="col-left">
+                                    Akbank
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="albaraka row">
+                            <div class="col-left">
+                                    Albaraka
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="ziraat row">
+                            <div class="col-left">
+                                    Ziraat
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="finans row">
+                            <div class="col-left">
+                                    Finans
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kredi-kartlari">
+                    <div class="header row">
+                        <div class="col-left">
+                                Kredi Kartları
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="finans row">
+                            <div class="col-left">
+                                    Finans Bank
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="deniz row">
+                            <div class="col-left">
+                                    Deniz Bank
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="akbank row">
+                            <div class="col-left">
+                                    Akbank
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="acigi-giderici-kaynaklar">
+            <div class="header row">
+                <div class="col-left">
+                        AÇIĞI GİDERİCİ KAYNAKLAR
+                </div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+            </div>
+            <div class="content">
+                <div class="banka">
+                    <div class="header row">
+                        <div class="col-left">
+                                Banka
+                        </div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                        <div class="col-sm">test</div>
+                    </div>
+                    <div class="content">
+                        <div class="toplam-banka-mevduat row">
+                            <div class="col-left">
+                                    Toplam Banka Mevduat
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="acik-icin-mevduat row">
+                            <div class="col-left">
+                                    Açık İçin Kullanılan Mevduat
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                        <div class="diger-kaynaklar row">
+                            <div class="col-left">
+                                    Diğer Açık Giderici Kaynaklar
+                            </div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                            <div class="col-sm">test</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/veri.js"></script>
 
 </html>

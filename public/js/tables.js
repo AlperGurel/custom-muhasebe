@@ -3,7 +3,7 @@ let endDate;
 let selectedColumn;
 let globalResult;
 let columnOptionList = ["test1", "test2"];
-
+const wifi_ip = "192.168.10.170";
 
 $("#dateEndPicker").datepicker({
     onSelect: function(formattedDate, dateObj, inst){
@@ -48,7 +48,7 @@ $(".table-name").click(function(e){
     table_name = query;
     $.ajax({
         type: "get",
-        url: "http://192.168.10.155:3000/tables/test/" + query,
+        url: "http://" + wifi_ip + ":3000/tables/test/" + query,
         success: (result) => {
             drawTable(result, false);
             globalResult = result;

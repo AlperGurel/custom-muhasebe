@@ -47,13 +47,17 @@ function createSuperUclu(){
     //for each month
     //ocak
     donemBasiNakit.push(0);
-    let tmp = donemBasiNakit[0] + createdData["Nakit Girişleri"][0] - createdData["Nakit Çıkışları"][0] + createdData["Toplam Banka Mevduat"][0];
+    let tmp = donemBasiNakit[0] + createdData["Nakit Girişleri"][0] - createdData["Nakit Çıkışları"][0];
+    console.log(donemBasiNakit[0]);
+    console.log(createdData["Nakit Girişleri"][0])
+    console.log(createdData["Nakit Çıkışları"][0])
+    console.log(tmp);
     donemSonuNakit.push(tmp);
     tmp = donemSonuNakit[0] - donemBasiNakit[0]
     donemIciFark.push(tmp);
     for(let i = 1; i< 12; i++){
         donemBasiNakit.push(donemSonuNakit[i-1]);
-        tmp = donemBasiNakit[i] + createdData["Nakit Girişleri"][i] - createdData["Nakit Çıkışları"][i] + createdData["Toplam Banka Mevduat"][0];
+        tmp = donemBasiNakit[i] + createdData["Nakit Girişleri"][i] - createdData["Nakit Çıkışları"][i] ;
         donemSonuNakit.push(tmp);
         tmp = donemSonuNakit[i] - donemBasiNakit[i];
         donemIciFark.push(tmp);

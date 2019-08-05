@@ -1,0 +1,150 @@
+.row .col-sm{
+    max-width: 8%;
+    /* overflow: hidden; */
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.months .col-left{
+    color: rgb(97, 204, 115);
+    cursor: pointer;
+}
+
+.graph-container{
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.row .col-sm:first-child{
+    overflow:hidden;
+   
+}
+.header{
+    cursor: pointer;
+}
+.content{
+    display: none;
+}
+
+.row .col-left{
+    width: 220px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+}
+.nakit-girisleri, .nakit-cikisleri, .acigi-giderici-kaynaklar{
+    margin-top: 15px;
+}
+.nakit-cikisleri > .header{
+    background: rgba(163, 46, 46, 0.342);
+}
+.nakit-girisleri > .header{
+    background: rgba(46, 163, 46, 0.342);
+}
+.acigi-giderici-kaynaklar > .header{
+    background: #3a3a3a73
+}
+.nakit-girisleri .content .col-left{
+    padding-left: 10px;
+}
+.nakit-cikisleri .content .col-left{
+    padding-left: 10px;
+}
+.acigi-giderici-kaynaklar .content .col-left{
+    padding-left: 10px;
+}
+.nakit-girisleri .cari-faaliyetler .content .col-left{
+    padding-left: 20px;
+}
+.nakit-girisleri .cari-faaliyetler .content .gerceklesen-satislar .content .col-left{
+    padding-left: 30px;
+}
+
+.nakit-girisleri .alinan-cekler .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-girisleri .banka-pos-hesaplari .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-cikisleri .content .cari-faaliyetler .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-cikisleri .content .sabit-giderler .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-cikisleri .content .verilen-cekler .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-cikisleri .content .krediler .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-cikisleri .content .kredi-kartlari .content .col-left{
+    padding-left: 20px;
+}
+
+.nakit-cikisleri .content .cari-faaliyetler .content .gerceklesen-alislar .content .col-left{
+    padding-left: 30px;
+}
+
+.acigi-giderici-kaynaklar .content .banka .content .col-left{
+    padding-left: 20px; 
+}
+
+
+
+.main-table-container{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+  
+
+.table-container{
+    margin-top: 30px;
+    width: 100%;
+    /* background-color: rgb(66, 66, 66); */
+  }
+  
+.test-black{
+    background:#222222;
+    font-family: 'Ubuntu', sans-serif;
+    border-style:none;
+    color: #acacac;
+    font-weight: 600;
+    height: 10px;
+}
+.test-black:hover{
+    background:#111111;
+}
+
+.test-black-odd{
+    font-family: 'Ubuntu', sans-serif;
+    border-style:none;
+    color: #d8d8d8;
+    font-weight: 600;
+    background: #3a3a3a;
+    height: 10px;
+}
+
+.test-black-odd:hover{
+    background:#111111;
+}
+  
+.row-head{
+
+    height: 40px;
+}
+  
+.table-cell{
+    overflow: auto; 
+}
+  
+.google-visualization-table .gradient {
+    background-image: none;
+}
