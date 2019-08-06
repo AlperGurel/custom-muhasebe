@@ -208,9 +208,6 @@ function drawTable(result ,filterEnable) {
         $("tr")[0]["cells"][i].style["border-style"] = "none";
     }
     adjustOptions(columnTypes, columnKeys);
-//    for(let i = 0; i < $("td").length; i++){  
-//        $("td")[i].style["border-style"] = "none";
-//    }
 }
 
 function fixDate(badDate){

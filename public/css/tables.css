@@ -144,7 +144,8 @@
 }
 
 .table-cell{
-  overflow: auto; 
+  overflow: auto;
+  text-align: right;
 }
 
 .google-visualization-table .gradient {

@@ -22,9 +22,15 @@
 }
 .header{
     cursor: pointer;
+
 }
 .content{
     display: none;
+    
+}
+
+.col-sm{
+    text-align: right;
 }
 
 .row .col-left{
