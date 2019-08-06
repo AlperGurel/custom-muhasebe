@@ -1,5 +1,5 @@
 let resultData;
-const wifi_ip = "192.168.10.170";
+const wifi_ip = "192.168.10.150";
 $(document).ready(function(){
     $.ajax({
         type: "get",
@@ -285,7 +285,7 @@ function drawTable(){
     // }
 
     var table = new google.visualization.Table(document.getElementById('table_div'));
-
+    data.setProperty(0, 0, "style", "width: 220px");
     table.draw(data, {cssClassNames: cssClassNames, width: '100%', allowHtml: true});
     for(let i = 0; i < $("tr")[0]["cells"].length; i++){
         $("tr")[0]["cells"][i].style.background = "#393939";
@@ -334,3 +334,14 @@ $(".banka > .header").click(function(e){
 $(".months .col-left").click(function(e){
         $(".content").slideToggle(150);
 })
+
+function updateAçıkİçinKullanılanMevduat(amount, monthIndex){
+        $.ajax({
+                type:"POST",
+                url: "http://" + wifi_ip + ":3000/test/mevduat",
+                data:{
+                        mevduat: amount,
+                        monthIndex: monthIndex
+                }
+        })
+}

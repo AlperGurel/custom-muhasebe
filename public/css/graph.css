@@ -1,4 +1,27 @@
-
-#curve_chart{
-    margin-top: 30px;
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: black;
+}
+#donem-sonu-nakit-akis{
+    background: rgb(51, 51, 51);
+    margin-top: 40px;
+}
+#nakit-giris, #donem-ici-fark, #nakit-cikisleri{
+    margin-top: 40px;
+    width: 33%;
+    background: rgb(77, 77, 77);
+    display: inline-block;
+}
+#tahsilat-performans, #odeme-performans{
+    margin-top: 40px;
+    width: 49%;
+    background: rgb(51, 51, 51);
+    display: inline-block;
+}
+#giris-cikis{
+    margin-top: 40px;
+    background: rgb(51, 51, 51);
 }

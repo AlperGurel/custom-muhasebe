@@ -3,7 +3,7 @@ let endDate;
 let selectedColumn;
 let globalResult;
 let columnOptionList = ["test1", "test2"];
-const wifi_ip = "192.168.10.170";
+const wifi_ip = "192.168.10.150";
 
 $("#dateEndPicker").datepicker({
     onSelect: function(formattedDate, dateObj, inst){
@@ -41,6 +41,7 @@ typeMap = {
 let table_name;
 
 $(".table-name").click(function(e){
+    let now = new Date();
     $("#visible-table-name").html(e.currentTarget.innerText);
     $("#dateColumnSelection").empty();
     // $(".dropdown-content").css("display", "none");
@@ -50,6 +51,7 @@ $(".table-name").click(function(e){
         type: "get",
         url: "http://" + wifi_ip + ":3000/tables/test/" + query,
         success: (result) => {
+            console.log("This data acquired in " + (new Date() - now) + " ms");
             drawTable(result, false);
             globalResult = result;
         }
@@ -195,11 +197,10 @@ function drawTable(result ,filterEnable) {
         else if(endDate){
             view.setRows(view.getFilteredRows([{column: selectedColumn, maxValue: endDate}]))
         }
-        table.draw(view, {height: '78%', cssClassNames:cssClassNames, allowHtml: true})
     }
     else{
-        table.draw(data, { height: '78%', cssClassNames:cssClassNames, allowHtml: true});
     }  
+    table.draw(data, { height: '78%', cssClassNames:cssClassNames, allowHtml: true});
 
     for(let i = 0; i < $("tr")[0]["cells"].length; i++){
         $("tr")[0]["cells"][i].style.background = "#393939";

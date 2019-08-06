@@ -108,6 +108,7 @@
 .table-container{
     margin-top: 30px;
     width: 100%;
+    border: 1px solid white;
     /* background-color: rgb(66, 66, 66); */
   }
   

@@ -46,26 +46,36 @@ typeQueryList.forEach(element => {
 updateData();
 
 function updateData(){
+    sql.close();
+    console.log("Updating data...");
+    logTime();
     sql.connect(config, err => {
         if(err){
             console.log(err);
+            updateData();
         }
         else{
+            console.log("Connection successful for data updating..")
+            console.log("Requesting query");
             new sql.Request().query(combinedQuery, (err, result) => {
                 if(err){
                     console.log(err);
+                    updateData();
                 }
                 else{
+                    console.log("Query successfull for data. Writing to file...")
                     //recordsetin içindeki her veri için queryden isim çekip obje içinde 
                     //girdi oluştur.
                     let data = {};
                     result.recordsets.forEach((element, index) => {
                         data[queryKeyList[index]] = element;
                     })
-                    fs.writeFileSync("./public/data/veri.json", JSON.stringify(data));
-                    console.log("veri.json is updated")
-                    sql.close();
-                    updateTables();
+                    fs.writeFile("./public/data/veri.json", JSON.stringify(data), () => {
+                        console.log("veri.json is updated")
+                        sql.close();
+                        updateTables();
+                    });
+
                 }
             })
 
@@ -75,24 +85,33 @@ function updateData(){
 }
 
 function updateTypes(){
+    console.log("Updating types...");
     sql.connect(config, err => {
+
         if(err){
             console.log(err);
+            updateData();
         } 
         else{
+            console.log("Connection successfull for type update")
+            console.log("Requesting query")
             new sql.Request().query(combinedTypeQuery, (err, result) => {
                 if(err){
                     console.log(err);
+                    updateData();
                 }
                 else{
+                    console.log("Query successfull for types. Writing to file...")
                     let data = {};
                     result.recordsets.forEach((element, index) => {
                         data[typeQueryKeyList[index]] = element;
                     })
-                    fs.writeFileSync("./public/data/types.json", JSON.stringify(data));
-                    console.log("types.json updated");
-                    sql.close();
-                    updateData();
+                    fs.writeFile("./public/data/types.json", JSON.stringify(data), ()=>{
+                        console.log("types.json updated");
+                        sql.close();
+                        updateData();
+                    })
+
 
                 }
             })
@@ -102,22 +121,31 @@ function updateTypes(){
 }
 
 function updateTables(){
+    console.log("Updating tables...")
     sql.connect(config, err => {
         if(err){
             console.log(err);
+            updateData();
         }
         else{
+            console.log("Connection successfull for updating tables")
+            console.log("Requesting query");
             new sql.Request().query(combinedTableQuery, (err, result) => {
-                if(err) console.log(err);
+                if(err){
+                    console.log(err);
+                    updateData();
+                } 
                 else{
+                    console.log("Query successfull for updating table. Writing to file...")
                     let data = {};
                     result.recordsets.forEach((element, index) => {
                         data[tableQueryKeyList[index]] = element;
                     })
-                    fs.writeFileSync("./public/data/tables.json", JSON.stringify(data));
-                    console.log("table.json updated")
-                    sql.close();
-                    updateTypes();
+                    fs.writeFile("./public/data/tables.json", JSON.stringify(data), () => {
+                        console.log("table.json updated")
+                        sql.close();
+                        updateTypes();
+                    });
                     
                 }
             })
@@ -127,6 +155,7 @@ function updateTables(){
 }
 
 sql.on("error", err => {
+    console.dir("Catched an error on a global basis?")
     console.log(err)
     updateData();
 })
@@ -137,3 +166,7 @@ function setIntervalandExecute(fn, t){
     return(setInterval(fn, t))
 };
 
+function logTime(){
+    let now = new Date();
+    console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds())
+}

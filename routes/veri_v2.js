@@ -14,6 +14,19 @@ router.get("/", (req, res, next) => {
     res.status(200).render("veri");
 } )
 
+router.post("/mevduat", (req, res, next) => {
+    
+    let mevduat = req.body.mevduat;
+    let monthIndex = req.body.monthIndex;
+    let lst = [0,0,0,0,0,0,0,0,0,0,0,0];
+    if(createdData["Açık İçin Kullanılan Mevduat"]){
+        lst = createdData["Açık İçin Kullanılan Mevduat"];
+    }
+    lst[monthIndex] = mevduat;
+    createdData["Açık İçin Kullanılan Mevduat"] = lst;
+    res.status(200).json("ok");
+})
+
 router.get("/getData", (req ,res, next) => {
     const filePath = path.join(__dirname, "../public/data/veri.json")
     fs.readFile(filePath, (err, data) => {
