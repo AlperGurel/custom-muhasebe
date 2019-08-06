@@ -285,11 +285,22 @@ function drawTable(){
     // }
 
     var table = new google.visualization.Table(document.getElementById('table_div'));
+    var numberFormatter = new google.visualization.NumberFormat({
+        suffix: "₺", 
+        decimalSymbol: ",", 
+        fractionDigits: 2, 
+        groupingSymbol: ".",
+        negativeColor: "#fc4e03"
+    })
+    for(let i = 1; i < months.length + 1; i++){
+            numberFormatter.format(data, i);
+    }
     data.setProperty(0, 0, "style", "width: 220px");
     table.draw(data, {cssClassNames: cssClassNames, width: '100%', allowHtml: true});
     for(let i = 0; i < $("tr")[0]["cells"].length; i++){
         $("tr")[0]["cells"][i].style.background = "#393939";
         $("tr")[0]["cells"][i].style.color = "#08A55D";
+        $("tr")[0]["cells"][i].style["text-align"] = "center"
         $("tr")[0]["cells"][i].style["border-style"] = "none";
     }
 

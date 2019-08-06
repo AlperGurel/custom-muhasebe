@@ -140,16 +140,18 @@
 }
 
 .test-black-odd:hover{
-    background:#111111;
+    background:#2c1919;
 }
   
-.row-head{
 
-    height: 40px;
-}
-  
 .table-cell{
     overflow: auto; 
+    text-align: right;
+}
+
+.row-head{
+    text-align: left;
+    height: 40px;
 }
   
 .google-visualization-table .gradient {

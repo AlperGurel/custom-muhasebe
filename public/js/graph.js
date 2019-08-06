@@ -10,34 +10,41 @@ $(document).ready(() => {
         resultData = result;
         new ApexCharts(document.querySelector("#donem-sonu-nakit-akis"), createTestOptions({
             name: "Dönem Sonu Nakit",
-            data: [resultData["Dönem Sonu Nakit"]]
+            data: [resultData["Dönem Sonu Nakit"]],
+            formatter: "money"
         })).render();         
         new ApexCharts(document.querySelector("#nakit-giris"), createTestOptions({
             name: "Nakit Giriş",
-            data: [resultData["Nakit Girişleri"]]
+            data: [resultData["Nakit Girişleri"]],
+            formatter: "money"
         })).render();
         new ApexCharts(document.querySelector("#donem-ici-fark"), createTestOptions({
             name: "Dönem İçi Fark",
-            data: [resultData["Dönem İçi Fark"]]
+            data: [resultData["Dönem İçi Fark"]],
+            formatter: "money"
         })).render();
         new ApexCharts(document.querySelector("#nakit-cikisleri"), createTestOptions({
             name: "Nakit Çıkışları",
-            data: [resultData["Nakit Çıkışları"]]
+            data: [resultData["Nakit Çıkışları"]],
+            formatter: "money"
         })).render();
         new ApexCharts(document.querySelector("#tahsilat-performans"), createTestOptions({
             name: "Tahsilat Performans",
-            data: [resultData["Tahsilat Performans"]]
+            data: [resultData["Tahsilat Performans"]],
+            formatter: "percent"
         })).render();
         new ApexCharts(document.querySelector("#odeme-performans"), createTestOptions({
             name: "Ödeme Performans",
-            data: [resultData["Ödeme Performans"]]
+            data: [resultData["Ödeme Performans"]],
+            formatter: "percent"
         })).render();
         new ApexCharts(document.querySelector("#giris-cikis"), createTestOptions({
             name: "Nakit Giriş Çıkış",
             data: [resultData["Nakit Girişleri"], resultData["Nakit Çıkışları"]],
             datanames: ["Nakit Girişi", "Nakit Çıkışı"],
             lineType: "area",
-            colors: ["#42f569","#f54b42"]
+            colors: ["#42f569","#f54b42"],
+            formatter: "money"
         })).render()
      }
   })
@@ -52,7 +59,8 @@ function fixNumbers(data){
       if(element != "Güncel Bakiye"){
           data[element].forEach((number, innerIndex) =>{
               if(number != null){
-                  data[element][innerIndex] = parseInt(number.toFixed());
+                  // data[element][innerIndex] = parseInt(number.toFixed());
+                  data[element][innerIndex] = number.toFixed(2);
               }
           })
       }
@@ -64,6 +72,27 @@ function fixNumbers(data){
 
 
 let createTestOptions = function(options){
+    let formatter;
+    let fnMoneyFormat = function(val, opts){
+      return val.toLocaleString("tr") + "₺";
+    }
+    let fnPercentFormat = function(val, opts){
+      return val.toString() + "%";
+    }
+    let fnDefault = function(val, opts){
+      return val
+    }
+    if(options.formatter){
+      if(options.formatter == "money"){
+        formatter = fnMoneyFormat;
+      }
+      else if(options.formatter == "percent"){
+        formatter = fnPercentFormat;
+      }
+    } else{
+      formatter = fnDefault;
+    }
+    console.log(formatter)
     let type = "line";
     let colors= ["#00E396", "#0090FF"];
     if(options.colors){
@@ -130,7 +159,8 @@ let createTestOptions = function(options){
            width: 3
         },
         dataLabels: {
-          enabled: false
+          enabled: true,
+          formatter: formatter
         },
         series: series,
         markers: {

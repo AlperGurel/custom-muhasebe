@@ -180,9 +180,19 @@ function drawTable(result ,filterEnable) {
     var monthYearFormatter = new google.visualization.DateFormat({
         pattern: "dd-MM-yyy"
     });
+    var numberFormatter = new google.visualization.NumberFormat({
+            suffix: "₺", 
+            decimalSymbol: ",", 
+            fractionDigits: 2, 
+            groupingSymbol: ".",
+            negativeColor: "#fc4e03"
+        })
     columnTypes.forEach((element, index) => {
         if(element === "date"){
             monthYearFormatter.format(data, index )
+        }
+        if(element === "number"){
+            numberFormatter.format(data, index);
         }
     })
     let view = new google.visualization.DataView(data);
